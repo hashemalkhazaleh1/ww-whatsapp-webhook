@@ -23,9 +23,8 @@ if (!Number.isInteger(port) || port <= 0) {
 }
 app.get("/send-test", async (req, res) => {
   const TOKEN = process.env.WA_TOKEN;
-  const PHONE_NUMBER_ID = "1170395012834827";
+  const PHONE_NUMBER_ID = "681242511728931";
   const TO = "14196562881";
-
   const response = await fetch(
     `https://graph.facebook.com/v20.0/${PHONE_NUMBER_ID}/messages`,
     {
@@ -54,7 +53,6 @@ app.get("/send-test", async (req, res) => {
       }),
     }
   );
-
   const result = await response.json();
   res.json(result);
 });
